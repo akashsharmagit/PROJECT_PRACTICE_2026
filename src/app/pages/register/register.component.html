@@ -1,0 +1,65 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <div class="register-container d-flex align-items-center justify-content-center">
+        <div class="register-card shadow">
+
+            <h3 class="text-center mb-4 text-primary fw-bold">Create Account</h3>
+
+            <!-- 🔹 Full Name -->
+            <div class="mb-3 input-wrapper">
+                <i class="bi bi-person-fill input-icon"></i>
+                <input type="text" [(ngModel)]="registerObj.fullName" name="fullName" class="form-control" placeholder="Full Name"
+                    #fullName="ngModel">
+
+                <small class="text-danger" *ngIf="fullName.invalid && fullName.touched">
+                    Full Name is required
+                </small>
+            </div>
+
+            <!-- 🔹 College -->
+            <div class="mb-3 input-wrapper">
+                <i class="bi bi-building input-icon"></i>
+                <input type="text" [(ngModel)]="registerObj.collegeName" name="college" ngModel required class="form-control" placeholder="College Name"
+                    #college="ngModel">
+
+                <small class="text-danger" *ngIf="college.invalid && college.touched">
+                    College Name is required
+                </small>
+            </div>
+
+            <!-- 🔹 Email -->
+            <div class="mb-3 input-wrapper">
+                <i class="bi bi-envelope-fill input-icon"></i>
+                <input type="email" [(ngModel)]="registerObj.email" name="email" ngModel required email class="form-control" placeholder="Email Address"
+                    #email="ngModel">
+
+                <small class="text-danger" *ngIf="email.invalid && email.touched">
+                    Valid Email required
+                </small>
+            </div>
+
+            <!-- 🔹 Password -->
+            <div class="mb-3 input-wrapper">
+                <i class="bi bi-lock-fill input-icon"></i>
+                <input type="password" [(ngModel)]="registerObj.password" name="password" ngModel required minlength="6" class="form-control"
+                    placeholder="Password" #password="ngModel">
+
+                <small class="text-danger" *ngIf="password.invalid && password.touched">
+                    Min 6 characters required
+                </small>
+            </div>
+
+            <!-- 🔹 Submit -->
+            <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">
+                Create Account
+            </button>
+
+            <p class="text-center mt-3">
+                Already have an account?
+                <a routerLink="/login" class="text-primary">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+</form>
