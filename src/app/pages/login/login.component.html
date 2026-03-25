@@ -1,39 +1,50 @@
-<div class="login-container d-flex align-items-center justify-content-center">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-  <div class="login-card shadow">
+  <div class="card shadow-lg p-4 login-card">
 
-    <!-- 🔹 Title -->
-    <h3 class="text-center mb-4 text-primary fw-bold">Login</h3>
-
-    <!-- 🔹 Email -->
-    <div class="form-group mb-3 input-wrapper">
-      <i class="bi bi-envelope-fill input-icon"></i>
-      <input type="email" class="form-control" placeholder="Email Address">
+    <!-- Left Text -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-primary">Welcome Back 👋</h2>
+      <p class="text-muted">Sign in to continue to TechNona</p>
     </div>
 
-    <!-- 🔹 Password -->
-    <div class="form-group mb-3 input-wrapper">
-      <i class="bi bi-lock-fill input-icon"></i>
-      <input type="password" class="form-control" placeholder="Password">
-    </div>
+    <!-- Form -->
+    <form (submit)="onlogin()" [formGroup]="loginForm">
 
-    <!-- 🔹 Remember + Forgot -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <div>
-        <input type="checkbox" id="remember">
-        <label for="remember" class="ms-1">Remember me</label>
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Email Address</label>
+        <div class="input-group input-group-custom">
+          <span class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <input type="email"
+                 class="form-control"
+                 formControlName="email"
+                 placeholder="Enter your email">
+        </div>
       </div>
-      <a href="#" class="text-primary small">Forgot Password?</a>
-    </div>
 
-    <!-- 🔹 Button -->
-    <button class="btn btn-primary w-100 mb-3">Login</button>
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Password</label>
+        <div class="input-group input-group-custom">
+          <span class="input-group-text">
+            <i class="fa fa-lock"></i>
+          </span>
+          <input type="password"
+                 class="form-control"
+                 formControlName="password"
+                 placeholder="Enter your password">
+        </div>
+      </div>
 
-    <!-- 🔹 Signup -->
-    <p class="text-center mb-0">
-      Don't have an account?
-      <a routerLink="/register" class="text-primary fw-semibold">Sign Up</a>
-    </p>
+      <!-- Button -->
+      <button type="submit" class="btn btn-primary w-100 mt-3 login-btn">
+        Login
+      </button>
+
+    </form>
 
   </div>
 
