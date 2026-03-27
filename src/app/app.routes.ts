@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StudentComponent } from './pages/student/student.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { CompetitionComponent } from './pages/competition/competition.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +32,10 @@ export const routes: Routes = [
         path:'register',
         component:RegisterComponent
     },
+    {
+        path:'competition',
+        component:CompetitionComponent
+    },
+    
     
 ];

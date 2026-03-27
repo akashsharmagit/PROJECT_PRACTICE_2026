@@ -30,6 +30,7 @@ export class LoginComponent {
 
         // ✅ make sure API key matches
         localStorage.setItem("studentID", res.userId);
+        localStorage.setItem("loggedUser",JSON.stringify(res))
 
         this.userService.loggedUserId = res.userId;
 
